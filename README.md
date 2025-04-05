@@ -2,7 +2,7 @@
 
 FutureFund adalah aplikasi kalkulator investasi yang membantu Anda merencanakan masa depan finansial dengan proyeksi yang akurat dan informatif. Dengan antarmuka yang intuitif dan mobile-friendly, aplikasi ini memudahkan pengguna untuk membuat rencana investasi yang tepat.
 
-![FutureFund Screenshot](https://drive.google.com/file/d/1aH1JIUgsOJ96dCtlQqNWkw6wJRFUlSrR/view?usp=sharing)
+![FutureFund Screenshot](public/og-image.png)
 
 ## Fitur Utama
 
