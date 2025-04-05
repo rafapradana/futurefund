@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+ 
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+ 
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+ 
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+ 
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+ 
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+ 
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+ 
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+ 
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+ 
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+ 
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+ 
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+ 
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+ 
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+ 
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+ 
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  /* Perbaikan untuk sentuhan pada perangkat mobile */
+  html {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+  
+  /* Memperbesar target sentuhan */
+  input, button, select, a {
+    touch-action: manipulation;
+  }
+  
+  /* Meningkatkan keterbacaan font pada layar kecil */
+  @media (max-width: 640px) {
+    html {
+      font-size: 15px;
+    }
+  }
+  
+  /* Perbaikan untuk viewport mobile */
+  @viewport {
+    width: device-width;
+    zoom: 1.0;
+  }
+  
+  /* Mencegah zoom saat fokus pada input di iOS */
+  @media screen and (max-width: 640px) {
+    input, select, textarea {
+      font-size: 16px !important;
+    }
+  }
+  
+  /* Perbaikan untuk dialog dan modals pada mobile */
+  .dialog-content-mobile {
+    max-width: calc(100% - 32px);
+    width: 100%;
+    max-height: calc(100% - 64px);
+    border-radius: 12px;
+    padding: 16px;
+  }
+}
+
+/* Utilitas tambahan untuk responsivitas */
+@layer utilities {
+  .touch-feedback {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    transition: opacity 0.2s;
+  }
+  
+  .touch-feedback:active {
+    opacity: 0.7;
+  }
+  
+  /* Teks responsif */
+  .text-responsive {
+    font-size: clamp(14px, 4vw, 16px);
+  }
+  
+  /* Padding responsif */
+  .p-responsive {
+    padding: clamp(8px, 3vw, 16px);
+  }
+  
+  /* Gap responsif */
+  .gap-responsive {
+    gap: clamp(8px, 2vw, 16px);
+  }
+}
+
+/* Memastikan chart responsif */
+.recharts-responsive-container {
+  width: 100% !important;
+  height: auto !important;
+} 
